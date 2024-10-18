@@ -1,5 +1,3 @@
-package organization;
-
 import java.util.ArrayList;
 import java.util.List;
 
