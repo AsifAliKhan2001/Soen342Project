@@ -9,14 +9,11 @@
 ```ocl
 context Offering
 inv UniqueOfferings:
-    Offering.allInstances()->isUnique(o | Tuple {
-        date: o.date,
-        timeSlot: o.timeSlot,
-        location: o.location
-    })
-```
-**Explanation:** This invariant ensures that for all instances of `Offering`, the combination of `date`, `timeSlot`, and `location` is unique.
+    Offering.allInstances()->forAll(o1, o2 |
+        o1 <> o2 and o1.date = o2.date and o1.timeSlot = o2.timeSlot
+        implies o1.location <> o2.location)
 
+```
 ---
 
 ## Constraint 2: Underage Clients Must Have Guardians
@@ -55,10 +52,10 @@ inv InstructorAvailability:
 
 ```ocl
 context Client
-inv NoMultipleBookings:
-    self.bookings->isUnique(b | Tuple {
-        date: b.offering.date,
-        timeSlot: b.offering.timeSlot
-    })
+inv NoMultipleBookingsSameDayTimeSlot:
+    self.bookings->forAll(b1, b2 |
+        b1 <> b2 implies
+        (b1.offering.date <> b2.offering.date or b1.offering.timeSlot <> b2.offering.timeSlot)
+    )
 ```
 **Explanation:** For each `Client`, their bookings must be unique based on the `date` and `timeSlot` of the associated `Offering`.
