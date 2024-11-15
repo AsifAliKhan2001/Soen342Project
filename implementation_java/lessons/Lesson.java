@@ -1,3 +1,5 @@
+package implementation_java.lessons;
+
 public class Lesson {
     // Attributes
     private String type; // e.g., swimming, judo

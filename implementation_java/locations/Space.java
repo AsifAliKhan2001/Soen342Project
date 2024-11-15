@@ -1,3 +1,7 @@
+package implementation_java.locations;
+
+import implementation_java.offerings.Offering;
+
 public class Space {
     // Attributes
     private String type; // e.g., gym, room, swimming pool
@@ -11,20 +15,8 @@ public class Space {
         this.location = location;
     }
 
-    // Methods
-    public void scheduleOffering(Offering offering) {
-        // Implement scheduling logic
-    }
-
-    public String getType() {
-        return type;
-    }
-
     public String getName() {
         return name;
     }
 
-    public Location getLocation() {
-        return location;
-    }
 }

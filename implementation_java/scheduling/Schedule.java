@@ -1,3 +1,5 @@
+package implementation_java.scheduling;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +17,6 @@ public class Schedule {
         this.timeSlots = new ArrayList<>();
     }
 
-    // Methods
     public void addTimeSlot(TimeSlot timeSlot) {
         timeSlots.add(timeSlot);
     }
@@ -26,6 +27,17 @@ public class Schedule {
 
     public List<TimeSlot> getTimeSlots() {
         return timeSlots;
+    }
+
+    public boolean overlapsWith(Schedule other) {
+        for (TimeSlot thisSlot : this.timeSlots) {
+            for (TimeSlot otherSlot : other.timeSlots) {
+                if (thisSlot.overlapsWith(otherSlot)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     // Getters

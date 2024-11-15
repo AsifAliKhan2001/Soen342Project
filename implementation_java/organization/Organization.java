@@ -1,3 +1,7 @@
+package implementation_java.organization;
+
+import implementation_java.offerings.Offering;
+
 import java.util.ArrayList;
 import java.util.List;
 

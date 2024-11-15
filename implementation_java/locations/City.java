@@ -1,3 +1,5 @@
+package implementation_java.locations;
+
 public class City {
     // Attributes
     private String name;

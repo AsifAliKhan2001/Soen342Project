@@ -1,3 +1,13 @@
+package implementation_java.users;
+
+import implementation_java.booking.Booking;
+import implementation_java.booking.BookingStatus;
+import implementation_java.offerings.Offering;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class Client {
     private String clientID;
     private String name;
@@ -53,7 +63,7 @@ public class Client {
         }
 
         booking.cancel();
-        offering.markAsAvailable();
+        booking.getOffering().markAsAvailable();
     }
 
     // Getters and Setters

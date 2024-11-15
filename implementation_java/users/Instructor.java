@@ -1,3 +1,9 @@
+package implementation_java.users;
+
+import implementation_java.lessons.Specialization;
+import implementation_java.locations.City;
+import implementation_java.offerings.Offering;
+
 import java.util.ArrayList;
 import java.util.List;
 

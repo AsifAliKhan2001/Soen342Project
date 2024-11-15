@@ -1,3 +1,5 @@
+package implementation_java.lessons;
+
 public class Specialization {
     // Attributes
     private String type; // ex:, swimming, judo

@@ -1,3 +1,5 @@
+package implementation_java.scheduling;
+
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
@@ -14,7 +16,6 @@ public class TimeSlot {
         this.endTime = endTime;
     }
 
-    // Methods
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
@@ -25,5 +26,11 @@ public class TimeSlot {
 
     public LocalTime getEndTime() {
         return endTime;
+    }
+
+    public boolean overlapsWith(TimeSlot other) {
+        return this.dayOfWeek == other.dayOfWeek &&
+                this.startTime.isBefore(other.endTime) &&
+                this.endTime.isAfter(other.startTime);
     }
 }

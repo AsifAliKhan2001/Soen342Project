@@ -1,3 +1,5 @@
+package implementation_java.users;
+
 public abstract class UserAccount {
     // Attributes
     protected String username;

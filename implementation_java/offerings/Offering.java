@@ -1,3 +1,10 @@
+package implementation_java.offerings;
+
+import implementation_java.lessons.Lesson;
+import implementation_java.locations.Space;
+import implementation_java.scheduling.Schedule;
+import implementation_java.users.Instructor;
+
 public class Offering {
     // Attributes
     private boolean available;
@@ -48,5 +55,13 @@ public class Offering {
 
     public Instructor getInstructor() {
         return instructor;
+    }
+
+    public void markAsAvailable() {
+        this.available = true;
+    }
+
+    public void markAsBooked() {
+        this.available = false;
     }
 }

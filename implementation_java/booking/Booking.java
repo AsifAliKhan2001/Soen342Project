@@ -1,3 +1,11 @@
+package implementation_java.booking;
+
+import implementation_java.offerings.Offering;
+import implementation_java.users.Client;
+
+import java.time.LocalDate;
+import java.util.UUID;
+
 public class Booking {
     private String bookingID;
     private Client client;
@@ -20,5 +28,15 @@ public class Booking {
         status = BookingStatus.Cancelled;
     }
 
-    // Getters and Setters
+    public String getBookingID() {
+        return bookingID;
+    }
+
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public Offering getOffering() {
+        return offering;
+    }
 }
